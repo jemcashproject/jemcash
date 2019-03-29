@@ -1,3 +1,4 @@
+#Ignore all these
 # ide & editor stuff
 .project
 .cproject
@@ -128,3 +129,6 @@ jemcash.creator
 jemcash.creator.user
 jemcash.files
 jemcash.includes
+
+#Allow these
+!src/tor/src/ext/timeouts/Makefile
