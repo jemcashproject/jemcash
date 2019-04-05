@@ -136,8 +136,8 @@ public:
         consensus.nMTPFiveMinutesStartBlock = SWITCH_TO_MTP_5MIN_BLOCK;
         consensus.nDifficultyAdjustStartBlock = 0;
         consensus.nFixedDifficulty = 0x2000ffff;
-        consensus.nPowTargetSpacingMTP = 5*60;  //5*60;
-        consensus.nInitialMTPDifficulty = 0x1c021e57;
+        consensus.nPowTargetSpacingMTP = 5*60;
+        consensus.nInitialMTPDifficulty = 0x1e0ffe57;
         consensus.nMTPRewardReduction = 1;
 
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
@@ -162,8 +162,8 @@ public:
         /**
          * btzc: jemcash init genesis block
          * nBits = 0x1e0ffff0
-         * nTime = 1552341600
-         * nNonce = 258874
+         * nTime = 1554465600
+         * nNonce = 654968
          * genesisReward = 0 * COIN
          * nVersion = 2
          * extraNonce
@@ -173,10 +173,10 @@ public:
         extraNonce[1] = 0x3f;
         extraNonce[2] = 0x00;
         extraNonce[3] = 0x00;
-        genesis = CreateGenesisBlock(JC_GENESIS_BLOCK_TIME, 258874, 0x1e0ffff0, 2, 0 * COIN, extraNonce);
+        genesis = CreateGenesisBlock(JC_GENESIS_BLOCK_TIME, 654968, 0x1e0ffff0, 2, 0 * COIN, extraNonce);
 		
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xc56680a1c2e4576f177c52e6d8ccc3a649053008cb70d220607ec7b1fab2bf8b"));
+        assert(consensus.hashGenesisBlock == uint256S("0xc5dc88c19045d7be42094d903b10a0b2ec1ff6550104bcc5644cba7988029863"));
         assert(genesis.hashMerkleRoot == uint256S("0x649284cf542e672728254da68356972182878ece4607dda1f73d0c696de2427a"));
 		
         vSeeds.push_back(CDNSSeedData("seed1.jemcash.info", "seed1.jemcash.info", false));
@@ -202,8 +202,8 @@ public:
 
         checkpointData = (CCheckpointData) {
                 boost::assign::map_list_of
-                        (0, uint256S("0xc56680a1c2e4576f177c52e6d8ccc3a649053008cb70d220607ec7b1fab2bf8b")),
-                1552341600, // * UNIX timestamp of last checkpoint block
+                        (0, uint256S("0xc5dc88c19045d7be42094d903b10a0b2ec1ff6550104bcc5644cba7988029863")),
+                1554465600, // * UNIX timestamp of last checkpoint block
                 0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
                 1200.0     // * estimated number of transactions per day after checkpoint
@@ -312,7 +312,7 @@ public:
         extraNonce[1] = 0x00;
         extraNonce[2] = 0x00;
         extraNonce[3] = 0x00;
-        genesis = CreateGenesisBlock(JC_GENESIS_BLOCK_TIME, 1728165, 0x1e0ffff0, 2, 0 * COIN, extraNonce);
+        genesis = CreateGenesisBlock(1552341600, 1728165, 0x1e0ffff0, 2, 0 * COIN, extraNonce);
 		
         consensus.hashGenesisBlock = genesis.GetHash();
         //btzc: update testnet jemcash hashGenesisBlock and hashMerkleRoot

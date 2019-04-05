@@ -64,9 +64,9 @@ static const int64_t DUST_HARD_LIMIT = 1000;   // 0.00001 JEM mininput
 #define JC_MINT_CONFIRMATIONS               6
 
 // Genesis block timestamp
-#define JC_GENESIS_BLOCK_TIME               1552341600
+#define JC_GENESIS_BLOCK_TIME               1554465600
 
-#define SWITCH_TO_MTP_BLOCK_HEADER 1552345200
+#define SWITCH_TO_MTP_BLOCK_HEADER 1554466800
 #define SWITCH_TO_MTP_5MIN_BLOCK            1
 
 // Number of zerocoin spends allowed per block and per transaction

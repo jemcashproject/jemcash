@@ -26,10 +26,10 @@
 
 unsigned char GetNfactor(int64_t nTimestamp) {
     int l = 0;
-    if (nTimestamp <= Params().GetConsensus().nChainStartTime)
-        return Params().GetConsensus().nMinNFactor;
+    if (nTimestamp <= Params(CBaseChainParams::MAIN).GetConsensus().nChainStartTime)
+        return Params(CBaseChainParams::MAIN).GetConsensus().nMinNFactor;
 
-    int64_t s = nTimestamp - Params().GetConsensus().nChainStartTime;
+    int64_t s = nTimestamp - Params(CBaseChainParams::MAIN).GetConsensus().nChainStartTime;
     while ((s >> 1) > 3) {
         l += 1;
         s >>= 1;
@@ -42,7 +42,7 @@ unsigned char GetNfactor(int64_t nTimestamp) {
 
     unsigned char N = (unsigned char) n;
 
-    return std::min(std::max(N, Params().GetConsensus().nMinNFactor), Params().GetConsensus().nMaxNFactor);
+    return std::min(std::max(N, Params(CBaseChainParams::MAIN).GetConsensus().nMinNFactor), Params(CBaseChainParams::MAIN).GetConsensus().nMaxNFactor);
 }  
 
 uint256 CBlockHeader::GetHash() const {
