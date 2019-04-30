@@ -13,7 +13,7 @@
 #include <stdint.h>
 
 // HF constants
-static const int HF_JNODE_HEIGHT = 8640; 
+static const int HF_JNODE_HEIGHT = 8670; 
 static const int HF_JNODE_PAYMENT_START = HF_JNODE_HEIGHT + 30; 
 static const int HF_MTP_HEIGHT = 1;
 

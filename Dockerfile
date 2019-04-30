@@ -57,8 +57,16 @@ USER jemcashd
 RUN mkdir /home/jemcashd/.jemcash
 VOLUME [ "/home/jemcashd/.jemcash" ]
 
+# MAINNetParams
 EXPOSE 2810
 EXPOSE 2710
+
+# TestNetParams
+EXPOSE 2811
+EXPOSE 12710
+
+# RegTestParams
 EXPOSE 2821
+EXPOSE 22710
 
 ENTRYPOINT [ "/usr/bin/jemcashd" ]

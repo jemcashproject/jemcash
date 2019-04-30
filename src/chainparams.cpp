@@ -139,6 +139,8 @@ public:
         consensus.nPowTargetSpacingMTP = 5*60;
         consensus.nInitialMTPDifficulty = 0x1e0ffe57;
         consensus.nMTPRewardReduction = 1;
+		
+		consensus.nDisableZerocoinStartBlock = 8500;
 
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
 
@@ -290,6 +292,8 @@ public:
         consensus.nPowTargetSpacingMTP = 5*60;
         consensus.nInitialMTPDifficulty = 0x2000ffff;  // !!!! change it to the real value
         consensus.nMTPRewardReduction = 1;
+		
+		consensus.nDisableZerocoinStartBlock = INT_MAX;
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
@@ -415,6 +419,8 @@ public:
         consensus.nPowTargetSpacingMTP = 5*60;
         consensus.nInitialMTPDifficulty = 0x2070ffff;  // !!!! change it to the real value
         consensus.nMTPRewardReduction = 1;
+		
+		consensus.nDisableZerocoinStartBlock = INT_MAX;
 
         pchMessageStart[0] = 0xcb;
         pchMessageStart[1] = 0xae;

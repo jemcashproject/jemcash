@@ -234,13 +234,11 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn)
 
     unsigned int COUNT_SPEND_JC_TX = 0;
     unsigned int MAX_SPEND_JC_TX_PER_BLOCK = 0;
-    if(!params.IsMain() || nHeight > HF_ZEROSPEND_FIX){
-        MAX_SPEND_JC_TX_PER_BLOCK = 1;
-    }
     if(!params.IsMain() ||
         nHeight > SWITCH_TO_MORE_SPEND_TXS ||
         Params().NetworkIDString() == CBaseChainParams::REGTEST){
-        MAX_SPEND_JC_TX_PER_BLOCK = JC_SPEND_LIMIT;
+		// uncomment this on zerocoin fix
+        //MAX_SPEND_JC_TX_PER_BLOCK = JC_SPEND_LIMIT;
     }
 
     // Collect memory pool transactions into the block
@@ -381,6 +379,10 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn)
                 LogPrintf("skip tx=%s, not IsFinalTx\n", tx.GetHash().ToString());
                 continue;
             }
+			
+			// temporarily disable zerocoin. Re-enable after sigma release
+            if (tx.IsZerocoinSpend() || tx.IsZerocoinMint())
+                continue;
 
             if (tx.IsZerocoinSpend()) {
                 LogPrintf("try to include zerocoinspend tx=%s\n", tx.GetHash().ToString());
