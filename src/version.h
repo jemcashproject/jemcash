@@ -9,7 +9,7 @@
  * network protocol versioning
  */
 
-static const int PROTOCOL_VERSION = 90036;
+static const int PROTOCOL_VERSION = 90037;
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 90023;
@@ -18,10 +18,10 @@ static const int INIT_PROTO_VERSION = 90023;
 static const int GETHEADERS_VERSION = 90030;
 
 //! disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION = 90036;
+static const int MIN_PEER_PROTO_VERSION = 90037;
 
 //! disconnect from all older peers after Jnode payment HF
-static const int MIN_PEER_PROTO_VERSION_AFTER_JNODE_PAYMENT_HF = 90036;
+static const int MIN_PEER_PROTO_VERSION_AFTER_JNODE_PAYMENT_HF = 90037;
 
 //! nTime field added to CAddress, starting with this version;
 //! if possible, avoid requesting addresses nodes older than this

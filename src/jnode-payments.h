@@ -24,7 +24,7 @@ static const int MNPAYMENTS_SIGNATURES_TOTAL            = 10;
 // V1 - Last protocol version before update
 // V2 - Newest protocol version
 static const int MIN_JNODE_PAYMENT_PROTO_VERSION_1 = 90034;
-static const int MIN_JNODE_PAYMENT_PROTO_VERSION_2 = 90036;
+static const int MIN_JNODE_PAYMENT_PROTO_VERSION_2 = 90037;
 
 extern CCriticalSection cs_vecPayees;
 extern CCriticalSection cs_mapJnodeBlocks;
